@@ -40,6 +40,3 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-/src/app/cart/
-/src/app/product/
-/src/app/data/

@@ -6,6 +6,8 @@ import { products } from '@/data/products';
 import ProductCard from '@/components/ui/ProductCard';
 import Sidebar from '@/components/ui/Sidebar';
 import { useSearchParams, useRouter } from 'next/navigation';
+import type { Filters } from "@/lib/types";
+
 
 export default function HomePage() {
   const searchParams = useSearchParams();
@@ -19,7 +21,7 @@ export default function HomePage() {
     const search = searchParams.get('search');
 
     if (category || price || search) {
-      const newFilters: any = {};
+      const newFilters: Partial<Filters> = {};
       
       if (category) {
         newFilters.category = category.split(',');

@@ -1,5 +1,4 @@
 import { Facebook, Twitter, Instagram } from "lucide-react";
-import { categories } from "@/data/products";
 
 export default function Footer() {
   return (

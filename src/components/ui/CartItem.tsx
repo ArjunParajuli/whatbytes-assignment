@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { Trash2, Minus, Plus } from "lucide-react";
 import { Product } from "@/lib/types";
 import toast from "react-hot-toast";
