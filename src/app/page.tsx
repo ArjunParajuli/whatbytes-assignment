@@ -1,5 +1,6 @@
 'use client';
 
+import { Suspense } from "react";
 import { useMemo, useEffect } from 'react';
 import { useStore } from '@/lib/store';
 import { products } from '@/data/products';
@@ -10,6 +11,14 @@ import type { Filters } from "@/lib/types";
 
 
 export default function HomePage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <HomePageContent />
+    </Suspense>
+  );
+}
+
+function HomePageContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const { filters, setFilters } = useStore();
