@@ -7,6 +7,7 @@ import { useStore } from '@/lib/store';
 import { ShoppingCart, Star, Plus, Minus } from 'lucide-react';
 import Link from 'next/link';
 import toast from 'react-hot-toast';
+import Image from 'next/image';
 
 export default function ProductDetailPage() {
   const { id } = useParams();
@@ -48,10 +49,12 @@ export default function ProductDetailPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Product Images */}
           <div className="aspect-square bg-white rounded-lg overflow-hidden">
-            <img
+            <Image
               src={product.image}
               alt={product.title}
               className="w-full h-full object-cover"
+              width={500}
+              height={500}
             />
           </div>
 

@@ -4,6 +4,8 @@ import { useStore } from '@/lib/store';
 import { Minus, Plus, Trash2 } from 'lucide-react';
 import Link from 'next/link';
 import toast from 'react-hot-toast';
+import Image from "next/image";
+
 
 export default function CartPage() {
   const { cart, updateQuantity, removeFromCart } = useStore();
@@ -36,10 +38,12 @@ export default function CartPage() {
           <div className="space-y-4">
             {cart.map((item) => (
               <div key={item.product.id} className="flex items-center space-x-4 py-4 border-b border-gray-200 last:border-b-0">
-                <img
+                <Image
                   src={item.product.image}
                   alt={item.product.title}
                   className="w-16 h-16 object-cover rounded"
+                  width={500}
+                  height={500}
                 />
                 
                 <div className="flex-1">

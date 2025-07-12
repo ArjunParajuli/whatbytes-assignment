@@ -3,6 +3,7 @@
 import { Trash2, Minus, Plus } from "lucide-react";
 import { Product } from "@/lib/types";
 import toast from "react-hot-toast";
+import Image from "next/image";
 
 interface CartItemProps {
   product: Product;
@@ -20,10 +21,12 @@ export default function CartItem({ product, quantity, onUpdateQuantity, onRemove
 
   return (
     <div className="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-sm border">
-      <img
+      <Image
         src={product.image}
         alt={product.title}
         className="w-16 h-16 object-cover rounded"
+        width={500}
+        height={500}
       />
       
       <div className="flex-1">

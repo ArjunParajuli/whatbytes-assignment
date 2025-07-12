@@ -5,6 +5,7 @@ import { useStore } from '@/lib/store';
 import { ShoppingCart, Star } from 'lucide-react';
 import Link from 'next/link';
 import toast from 'react-hot-toast';
+import Image from 'next/image';
 
 interface ProductCardProps {
   product: Product;
@@ -23,10 +24,12 @@ export default function ProductCard({ product }: ProductCardProps) {
     <Link href={`/product/${product.id}`}>
       <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 cursor-pointer">
         <div className="aspect-square bg-gray-100 rounded-t-lg overflow-hidden">
-          <img
+          <Image
             src={product.image}
             alt={product.title}
             className="w-full h-full object-cover hover:scale-105 transition-transform duration-200"
+            width={500}
+            height={500}
           />
         </div>
         
